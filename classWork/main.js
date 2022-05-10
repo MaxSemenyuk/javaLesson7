@@ -59,7 +59,7 @@ class Car {
     }
 
     addDriver(driver) {
-        this.driver = arguments
+        this.driver = driver
     }
 
 }
@@ -71,7 +71,7 @@ newCar.changeYear(2015)
 console.log(newCar.year)
 newCar.increaseMaxSpeed(100)
 console.log(newCar.maxSpeed)
-newCar.addDriver('Max', 'Mad', 230)
+newCar.addDriver({name : 'Max', surname: 'Mad', age: 33})
 console.log(newCar.driver)
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.

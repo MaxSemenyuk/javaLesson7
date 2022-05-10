@@ -4,27 +4,27 @@
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-// function Car(model, producer, year, maxSpeed, engine){
-//     this.model = model;
-//     this.producer = producer;
-//     this.year = year;
-//     this.maxSpeed = maxSpeed;
-//     this.engine = engine;
-//     this.drive= console.log(`I drive with ${this.maxSpeed} max speed!`);
-//     this.info = console.log(`model - ${this.model}, producer - ${this.producer}, year - ${this.year}, maxSpeed - ${this.maxSpeed}, engine - ${this.engine}`)
-//     this.increaseMaxSpeed = value => this.maxSpeed + value
-//     this.changeYear = newYear => this.year = newYear
-//     this.addDriver = function () {this.driver = arguments}
-// }
-// let newCar = new Car('XT', 'BMW', 2000, 230, 300);
-// newCar.drive;
-// newCar.info;
-// newCar.changeYear(2015)
-// console.log(newCar.year)
-// newCar.increaseMaxSpeed(100)
-// console.log(newCar.maxSpeed)
-// newCar.addDriver('Max', 'Mad', 230)
-// console.log(newCar.driver)
+function Car(model, producer, year, maxSpeed, engine){
+    this.model = model;
+    this.producer = producer;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+    this.engine = engine;
+    this.drive= console.log(`I drive with ${this.maxSpeed} max speed!`);
+    this.info = console.log(`model - ${this.model}, producer - ${this.producer}, year - ${this.year}, maxSpeed - ${this.maxSpeed}, engine - ${this.engine}`)
+    this.increaseMaxSpeed = value => this.maxSpeed + value
+    this.changeYear = newYear => this.year = newYear
+    this.addDriver = function (driver) {this.driver = driver}
+}
+let newCar = new Car('XT', 'BMW', 2000, 230, 300);
+newCar.drive;
+newCar.info;
+newCar.changeYear(2015)
+console.log(newCar.year)
+newCar.increaseMaxSpeed(100)
+console.log(newCar.maxSpeed)
+newCar.addDriver({name: 'Max', surname: 'Mad', age: '35'})
+console.log(newCar.driver)
 
 // - (Те саме, тільки через клас)
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -33,46 +33,46 @@
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-class Car {
-    constructor(model, producer, year, maxSpeed, engine) {
-        this.model = model;
-        this.producer = producer;
-        this.year = year;
-        this.maxSpeed = maxSpeed;
-        this.engine = engine;
-    }
-
-    drive() {
-        console.log('I drive with ' + this.maxSpeed + ' max speed!')
-    }
-
-    info() {
-        console.log('model - ' + this.model + ', producer - ' + this.producer + ', year - ' + this.year + ', maxSpeed - ' + this.maxSpeed + ', engine - ' + this.engine)
-    }
-
-    increaseMaxSpeed(newSpeed) {
-        this.maxSpeed = this.maxSpeed + newSpeed
-    }
-
-    changeYear(newValue) {
-        this.year = newValue
-    }
-
-    addDriver(driver) {
-        this.driver = driver
-    }
-
-}
-
-let newCar = new Car('XT', 'BMW', 2000, 230, 300);
-newCar.drive()
-newCar.info()
-newCar.changeYear(2015)
-console.log(newCar.year)
-newCar.increaseMaxSpeed(100)
-console.log(newCar.maxSpeed)
-newCar.addDriver({name : 'Max', surname: 'Mad', age: 33})
-console.log(newCar.driver)
+// class Car {
+//     constructor(model, producer, year, maxSpeed, engine) {
+//         this.model = model;
+//         this.producer = producer;
+//         this.year = year;
+//         this.maxSpeed = maxSpeed;
+//         this.engine = engine;
+//     }
+//
+//     drive() {
+//         console.log('I drive with ' + this.maxSpeed + ' max speed!')
+//     }
+//
+//     info() {
+//         console.log('model - ' + this.model + ', producer - ' + this.producer + ', year - ' + this.year + ', maxSpeed - ' + this.maxSpeed + ', engine - ' + this.engine)
+//     }
+//
+//     increaseMaxSpeed(newSpeed) {
+//         this.maxSpeed = this.maxSpeed + newSpeed
+//     }
+//
+//     changeYear(newValue) {
+//         this.year = newValue
+//     }
+//
+//     addDriver(driver) {
+//         this.driver = driver
+//     }
+//
+// }
+//
+// let newCar = new Car('XT', 'BMW', 2000, 230, 300);
+// newCar.drive()
+// newCar.info()
+// newCar.changeYear(2015)
+// console.log(newCar.year)
+// newCar.increaseMaxSpeed(100)
+// console.log(newCar.maxSpeed)
+// newCar.addDriver({name : 'Max', surname: 'Mad', age: 33})
+// console.log(newCar.driver)
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
